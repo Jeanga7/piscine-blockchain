@@ -1,7 +1,7 @@
 ### Transactions Quest
 
 _Sometimes science is more art than science. - Rick Sanchez_
-
+   
 Welcome and congratulations for choosing to learn blockchains and cryptocurrencies.
 
 Today we get a first experience in the most core element, transactions. We will use the actual Bitcoin software to create transactions and send them. We will learn to interact with command lines, APIs and wallets to move cryptocurrencies around.
