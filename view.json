@@ -1,0 +1,223 @@
+[
+  {
+    "address": "bcrt1q52n5yzu2maek50m4trg6xlf22zf95ala2466tl",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4XqaEwbwYXKk7t87Lk9jJxWpeDg7ctjhkHyD2PVAgVFgkJP1Q4Damhtk6uVZgbkFGFQkSx8BPmnmTmpMh51ETvmC7Ttb3rTD/84'/1'/0'/0/*)#2l3zsseg"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "confirmations": 8,
+    "generated": true,
+    "blockhash": "6c58518a6293b43fc767d92c04226a1cef4fd5c1af6638e7528f803e4f063e91",
+    "blockheight": 94,
+    "blockindex": 0,
+    "blocktime": 1741707937,
+    "txid": "be3c36e5e6b7dab7a643e78b5d0ff24de174adfc12d68ed1389f6f486843fd3f",
+    "wtxid": "4ebd20fde7d4084510189573ff9118f596615c56ea9f962ca9122955d6f506a7",
+    "walletconflicts": [
+    ],
+    "time": 1741707921,
+    "timereceived": 1741707921,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1q52n5yzu2maek50m4trg6xlf22zf95ala2466tl",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4XqaEwbwYXKk7t87Lk9jJxWpeDg7ctjhkHyD2PVAgVFgkJP1Q4Damhtk6uVZgbkFGFQkSx8BPmnmTmpMh51ETvmC7Ttb3rTD/84'/1'/0'/0/*)#2l3zsseg"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "confirmations": 7,
+    "generated": true,
+    "blockhash": "314962b8dcb1c1b5f84573e63113d4a928c2f4a65e3760ad43f390c7031f99ad",
+    "blockheight": 95,
+    "blockindex": 0,
+    "blocktime": 1741707937,
+    "txid": "fec76855a6bc07fb7ae97ac774b3dca1f35e56fe5029ddb4735c31e7cb4af648",
+    "wtxid": "3fe8fb802b871058ebc1fb8e84abe71d0af3aff3c4f4f843c1d9e7f4842a3008",
+    "walletconflicts": [
+    ],
+    "time": 1741707921,
+    "timereceived": 1741707921,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1q52n5yzu2maek50m4trg6xlf22zf95ala2466tl",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4XqaEwbwYXKk7t87Lk9jJxWpeDg7ctjhkHyD2PVAgVFgkJP1Q4Damhtk6uVZgbkFGFQkSx8BPmnmTmpMh51ETvmC7Ttb3rTD/84'/1'/0'/0/*)#2l3zsseg"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "confirmations": 6,
+    "generated": true,
+    "blockhash": "02480b9ff67e2b4f47efaa1a947736a2058cd7cd1b9230a94cfb9116c3ab224c",
+    "blockheight": 96,
+    "blockindex": 0,
+    "blocktime": 1741707937,
+    "txid": "19895f1686a5be63ecba1122de832824a8b03851958b058fa04bdf2356fc0571",
+    "wtxid": "8614c5300ccbc2d8ddb2845c69a7a66760e8617d89000e0f285e8044592ed770",
+    "walletconflicts": [
+    ],
+    "time": 1741707921,
+    "timereceived": 1741707921,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1q52n5yzu2maek50m4trg6xlf22zf95ala2466tl",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4XqaEwbwYXKk7t87Lk9jJxWpeDg7ctjhkHyD2PVAgVFgkJP1Q4Damhtk6uVZgbkFGFQkSx8BPmnmTmpMh51ETvmC7Ttb3rTD/84'/1'/0'/0/*)#2l3zsseg"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "confirmations": 5,
+    "generated": true,
+    "blockhash": "46cc2821c97a3c0bdbb5a1b63251c2eeb4c6d3ae3b599344e80c95141564ccbc",
+    "blockheight": 97,
+    "blockindex": 0,
+    "blocktime": 1741707937,
+    "txid": "5ed89d8d9de48f410f64092122b26a3cdd7443ffd8ce59d908cff51c388b6195",
+    "wtxid": "1a53e1525b086bbf1740dbe6944fcb863aaad785c6d22281e219bb4408010d43",
+    "walletconflicts": [
+    ],
+    "time": 1741707921,
+    "timereceived": 1741707921,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1q52n5yzu2maek50m4trg6xlf22zf95ala2466tl",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4XqaEwbwYXKk7t87Lk9jJxWpeDg7ctjhkHyD2PVAgVFgkJP1Q4Damhtk6uVZgbkFGFQkSx8BPmnmTmpMh51ETvmC7Ttb3rTD/84'/1'/0'/0/*)#2l3zsseg"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "confirmations": 4,
+    "generated": true,
+    "blockhash": "7dd028133dc930671cb4fb9479f131bcc640546044a173c6ce851b294d62011e",
+    "blockheight": 98,
+    "blockindex": 0,
+    "blocktime": 1741707938,
+    "txid": "9a9d992796b004844f296e6a8052b5dcd1d4507b957bfa59230caad39fa043cb",
+    "wtxid": "01b89b0bf6b6f476e511ac8b19b85b470cfec8ea1058ec153131e28ad3eecb07",
+    "walletconflicts": [
+    ],
+    "time": 1741707921,
+    "timereceived": 1741707921,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1q52n5yzu2maek50m4trg6xlf22zf95ala2466tl",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4XqaEwbwYXKk7t87Lk9jJxWpeDg7ctjhkHyD2PVAgVFgkJP1Q4Damhtk6uVZgbkFGFQkSx8BPmnmTmpMh51ETvmC7Ttb3rTD/84'/1'/0'/0/*)#2l3zsseg"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "confirmations": 3,
+    "generated": true,
+    "blockhash": "670c3bc590298a9446333a40af65257a0064b05aebca68231a886c595640bcc9",
+    "blockheight": 99,
+    "blockindex": 0,
+    "blocktime": 1741707938,
+    "txid": "992e3b11115670ecc6ee44a86c050f055aba87ae3d6dac994cf3da078bfdf712",
+    "wtxid": "9770c5a60b3f87995d8099d0b34d035139aaef25c81c0eb722683698faf03f65",
+    "walletconflicts": [
+    ],
+    "time": 1741707921,
+    "timereceived": 1741707921,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1q52n5yzu2maek50m4trg6xlf22zf95ala2466tl",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4XqaEwbwYXKk7t87Lk9jJxWpeDg7ctjhkHyD2PVAgVFgkJP1Q4Damhtk6uVZgbkFGFQkSx8BPmnmTmpMh51ETvmC7Ttb3rTD/84'/1'/0'/0/*)#2l3zsseg"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "confirmations": 2,
+    "generated": true,
+    "blockhash": "7d276221374d057467b0af2913e757ab1fecae8352e70b3e8b2c9108f0577cb3",
+    "blockheight": 100,
+    "blockindex": 0,
+    "blocktime": 1741707938,
+    "txid": "8cf11a74b5cadbc18b61b65bea4e7adfa164857ac708258e1ce4a22b81109965",
+    "wtxid": "2a05da04cb5fc289872948776745e4d606e6f0a3ae4a2b098deb3e550c5dd27b",
+    "walletconflicts": [
+    ],
+    "time": 1741707921,
+    "timereceived": 1741707921,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1q52n5yzu2maek50m4trg6xlf22zf95ala2466tl",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4XqaEwbwYXKk7t87Lk9jJxWpeDg7ctjhkHyD2PVAgVFgkJP1Q4Damhtk6uVZgbkFGFQkSx8BPmnmTmpMh51ETvmC7Ttb3rTD/84'/1'/0'/0/*)#2l3zsseg"
+    ],
+    "category": "immature",
+    "amount": 50.00000000,
+    "label": "",
+    "vout": 0,
+    "confirmations": 1,
+    "generated": true,
+    "blockhash": "7d276c3bb5599f7f8373e47595cd833106ae27c3100c086893875a5469ca56f0",
+    "blockheight": 101,
+    "blockindex": 0,
+    "blocktime": 1741707938,
+    "txid": "3588912698409f2f3793e9ce06fd8c14114d05639accd21eb43eb08a267b3c59",
+    "wtxid": "c084dda53a02abf111e014fb13db4af397bd64f2ad26b235731edb8d21589d74",
+    "walletconflicts": [
+    ],
+    "time": 1741707921,
+    "timereceived": 1741707921,
+    "bip125-replaceable": "no"
+  },
+  {
+    "address": "bcrt1qp47vpus657y2nhfkr85hg7a3ycl80uq6ds9h2v",
+    "parent_descs": [
+      "wpkh(tpubD6NzVbkrYhZ4XqaEwbwYXKk7t87Lk9jJxWpeDg7ctjhkHyD2PVAgVFgkJP1Q4Damhtk6uVZgbkFGFQkSx8BPmnmTmpMh51ETvmC7Ttb3rTD/84'/1'/0'/0/*)#2l3zsseg"
+    ],
+    "category": "receive",
+    "amount": 2.00000000,
+    "label": "",
+    "vout": 1,
+    "confirmations": 0,
+    "trusted": true,
+    "txid": "c6d9cb97854d3ceea2de64814497f05e893d56a7bce479571b00de4c1d8bca7b",
+    "wtxid": "dbcbe6615080566253235c607a1cb9e450a569f1b3af4f32e5f6631bc8e30c8f",
+    "walletconflicts": [
+    ],
+    "time": 1741708088,
+    "timereceived": 1741708088,
+    "bip125-replaceable": "yes"
+  },
+  {
+    "address": "bcrt1qp47vpus657y2nhfkr85hg7a3ycl80uq6ds9h2v",
+    "category": "send",
+    "amount": -2.00000000,
+    "label": "",
+    "vout": 1,
+    "fee": -0.00000141,
+    "confirmations": 0,
+    "trusted": true,
+    "txid": "c6d9cb97854d3ceea2de64814497f05e893d56a7bce479571b00de4c1d8bca7b",
+    "wtxid": "dbcbe6615080566253235c607a1cb9e450a569f1b3af4f32e5f6631bc8e30c8f",
+    "walletconflicts": [
+    ],
+    "time": 1741708088,
+    "timereceived": 1741708088,
+    "bip125-replaceable": "yes",
+    "abandoned": false
+  }
+]
