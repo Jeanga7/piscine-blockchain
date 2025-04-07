@@ -10,7 +10,7 @@ const client = new Client({
 async function retrieveBlockDate(height) {
   try {
     // Gérer le cas "latest"
-    if (height === "latest") {
+    if (height === NaN) {
       height = await client.getBlockCount();
     }
 
@@ -33,7 +33,7 @@ async function retrieveBlockDate(height) {
 
     return blockDate;
   } catch (error) {
-    console.error("Error retrieving block date:", error);
+    console.error("Error retrieving block date:", height, error);
     throw error;
   }
 }
