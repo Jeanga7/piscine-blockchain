@@ -9,7 +9,7 @@ const client = new Client({
 })
 
 
-module.exports = exports = async function retrieveBlockDate(height){
+async function retrieveBlockDate(height){
     try {
         const  blockHash = await client.command('getBlockHash', height);
 
@@ -24,3 +24,4 @@ module.exports = exports = async function retrieveBlockDate(height){
     }
 }
 
+module.exports = retrieveBlockDate;
