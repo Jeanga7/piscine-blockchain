@@ -15,7 +15,13 @@ async function retrieveBlockDate(height){
 
         const block = await client.command('getblock', blockHash);
 
-        const blockDate = new Date(block.time * 1000);
+        let blockDate;
+        
+        if (typeof block.time === 'string') {
+            blockDate = new Date(parseInt(block.time, 10) * 1000);
+        } else if (typeof block.time === 'number') {
+            blockDate = new Date(block.time * 1000);
+        }
 
         return blockDate;
     } catch (error) {
