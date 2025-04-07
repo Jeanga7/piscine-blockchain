@@ -9,9 +9,9 @@ const client = new Client({
 })
 
 
-async function retrieveBlockDate(height){
+async function retrieveBlockDate(_height){
     try {
-        const blockHash = await client.getBlockHash(height);
+        const blockHash = await client.getBestBlockHash();
         const block = await client.getBlock(blockHash);
 
         const blockTime = typeof block.time === 'string' ? parseInt(block.time, 10) : block.time;
