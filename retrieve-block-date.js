@@ -9,21 +9,20 @@ const client = new Client({
 
 async function retrieveBlockDate(height) {
   try {
-    // Si height vaut "latest", récupérez la hauteur du dernier bloc
-    if (height === "latest") {
-      height = await client.getBlockCount();
-    }
-    // S'assurer que height est bien un nombre
-    height = Number(height);
+    /* if (height === "latest") {
+      const count = await client.getBlockCount();
+      if (count === 0) throw new Error("Aucun bloc encore miné.");
+      height = count;
+    } */
 
-    const blockHash = await client.getBlockHash(height);
-    // On récupère le bloc avec la verbosité par défaut
+    const blockHash = await client.getBlockHash(Number(height));
     const block = await client.getBlock(blockHash);
 
-    // Convertir le temps du bloc en nombre (au cas où il serait retourné en chaîne)
     const blockTime =
       typeof block.time === "string" ? parseInt(block.time, 10) : block.time;
+
     const blockDate = new Date(blockTime * 1000);
+    
     return blockDate;
   } catch (error) {
     console.error("Error retrieving block date:", error);
