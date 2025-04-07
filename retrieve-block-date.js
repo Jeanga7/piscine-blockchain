@@ -11,12 +11,12 @@ const client = new Client({
 
 async function retrieveBlockDate(height){
     try {
-        const  blockHash = await client.getBlockHash(height);
-
+        const blockHash = await client.getBlockHash(height);
         const block = await client.getBlock(blockHash);
 
-        const blockDate = new Date(block.time * 1000);
+        const blockTime = typeof block.time === 'string' ? parseInt(block.time, 10) : block.time;
 
+        const blockDate = new Date(blockTime * 1000);
         return blockDate;
     } catch (error) {
         console.error('Error retrieving block date:', error);
