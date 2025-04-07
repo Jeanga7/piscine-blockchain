@@ -1,3 +1,3 @@
-const txid = "c6d9cb97854d3ceea2de64814497f05e893d56a7bce479571b00de4c1d8bca7b";
+const txid = "0bef42d01132b4cd3bf60394f8ab577e22825d98c0c2bfc3a4c04f04052a288a";
 
 module.exports = { txid };
