@@ -1,2 +1,0 @@
-exports.txid = "0bef42d01132b4cd3bf60394f8ab577e22825d98c0c2bfc3a4c04f04052a288a";
-

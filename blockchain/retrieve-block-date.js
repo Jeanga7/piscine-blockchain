@@ -24,4 +24,3 @@ module.exports = exports = async function retrieveBlockDate(height){
     }
 }
 
-
