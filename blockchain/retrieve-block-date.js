@@ -16,7 +16,7 @@ async function retrieveBlockDate(height) {
 
     height = Number(height);
     if (isNaN(height)) {
-      throw new Error("Hauteur de bloc invalide.");
+      throw new Error(`Hauteur de bloc invalide. ${height}`);
     }
 
     const blockHash = await client.getBlockHash(height);
