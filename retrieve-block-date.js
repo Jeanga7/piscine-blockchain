@@ -9,15 +9,13 @@ const client = new Client({
 
 async function retrieveBlockDate(height) {
   try {
-    /* if (height === "latest") {
-      const count = await client.getBlockCount();
-      if (count === 0) throw new Error("Aucun bloc encore miné.");
-      height = count;
-    } */
-
     const blockHash = await client.getBlockHash(Number(height));
     const block = await client.getBlock(blockHash);
 
+    if (!block.time) {
+      throw new Error(`Block time is null or undefined for block at height ${height}`);
+    }
+    
     const blockTime =
       typeof block.time === "string" ? parseInt(block.time, 10) : block.time;
 
