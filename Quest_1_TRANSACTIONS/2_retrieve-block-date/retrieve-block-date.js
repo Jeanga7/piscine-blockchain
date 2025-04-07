@@ -23,7 +23,7 @@ async function retrieveBlockDate(height) {
 
     return blockTime;
   } catch (error) {
-    console.error("Error retrieving block date:", height, error);
+    // console.error("Error retrieving block date:", height, error);
     throw error;
   }
 }
