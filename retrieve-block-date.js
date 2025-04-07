@@ -10,7 +10,7 @@ const client = new Client({
 async function retrieveBlockDate(height) {
   try {
     // Gérer le cas "latest"
-    if (height === NaN) {
+    if (height === NaN || isNaN(height)) {
       height = await client.getBlockCount();
     }
 
@@ -23,7 +23,9 @@ async function retrieveBlockDate(height) {
     const block = await client.getBlock(blockHash);
 
     if (!block.time) {
-      throw new Error(`Block time is null or undefined for block at height ${height}`);
+      throw new Error(
+        `Block time is null or undefined for block at height ${height}`
+      );
     }
 
     const blockTime =
