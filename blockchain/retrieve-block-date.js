@@ -9,18 +9,28 @@ const client = new Client({
 
 async function retrieveBlockDate(height) {
   try {
-    const blockHash = await client.getBlockHash(Number(height));
+    // Gérer le cas "latest"
+    if (height === "latest") {
+      height = await client.getBlockCount();
+    }
+
+    height = Number(height);
+    if (isNaN(height)) {
+      throw new Error("Hauteur de bloc invalide.");
+    }
+
+    const blockHash = await client.getBlockHash(height);
     const block = await client.getBlock(blockHash);
 
     if (!block.time) {
       throw new Error(`Block time is null or undefined for block at height ${height}`);
     }
-    
+
     const blockTime =
       typeof block.time === "string" ? parseInt(block.time, 10) : block.time;
 
     const blockDate = new Date(blockTime * 1000);
-    
+
     return blockDate;
   } catch (error) {
     console.error("Error retrieving block date:", error);
