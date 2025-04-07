@@ -11,17 +11,11 @@ const client = new Client({
 
 async function retrieveBlockDate(height){
     try {
-        const  blockHash = await client.command('getBlockHash', height);
+        const  blockHash = await client.getBlockHash(height);
 
-        const block = await client.command('getblock', blockHash);
+        const block = await client.getBlock(blockHash);
 
-        let blockDate;
-        
-        if (typeof block.time === 'string') {
-            blockDate = new Date(parseInt(block.time, 10) * 1000);
-        } else if (typeof block.time === 'number') {
-            blockDate = new Date(block.time * 1000);
-        }
+        const blockDate = new Date(block.time * 1000).toISOString();
 
         return blockDate;
     } catch (error) {
