@@ -24,4 +24,4 @@ async function retrieveBlockDate(height){
     }
 }
 
-module.exports = retrieveBlockDate;
+module.exports = { retrieveBlockDate };
