@@ -11,4 +11,3 @@ function increment(hex) {
   return Buffer.from(hexResult);
 }
 
-
