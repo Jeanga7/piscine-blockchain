@@ -9,4 +9,4 @@ async function hashFile(fpath) {
   return hash.digest("hex");
 }
 
-exports.hashFile = hashFile;
+module.exports = { hash160 };

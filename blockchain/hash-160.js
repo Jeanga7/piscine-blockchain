@@ -10,5 +10,5 @@ function hash160(input) {
   return sha256;
 }
 
-exports.hash160 = hash160;
+module.exports = { hash160 };
 
