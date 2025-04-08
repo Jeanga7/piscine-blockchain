@@ -7,7 +7,7 @@ const client = new Client({
   port: 18443,
 });
 
-async function retrieveTxValue(txid) {
+async function retrieveTransactionInOut(txid) {
   try {
     const tx = await client.getRawTransaction(txid, true);
 
@@ -38,4 +38,4 @@ async function retrieveTxValue(txid) {
   }
 }
 
-module.exports = { retrieveTxValue };
+module.exports = { retrieveTransactionInOut };
