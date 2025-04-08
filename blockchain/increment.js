@@ -1,4 +1,3 @@
-
 function increment(hex) {
   const number = parseInt(hex, 16);
 
@@ -8,7 +7,5 @@ function increment(hex) {
     hexResult = "0" + hexResult;
   }
 
-  console.log(hexResult)
-  return Buffer.from(hexResult);
+  return Buffer.from(hexResult, "hex");
 }
-

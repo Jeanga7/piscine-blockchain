@@ -7,5 +7,5 @@ function increment(hex) {
     hexResult = "0" + hexResult;
   }
 
-  return Buffer.from(hexResult);
+  return Buffer.from(hexResult, "hex");
 }
