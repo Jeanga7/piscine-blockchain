@@ -1,11 +1,10 @@
-const { Client } = require('bitcoin-core');
+const Client = require("bitcoin-core");
 
-// Crée le client Bitcoin
 const client = new Client({
-  network: 'regtest', // ou 'testnet' si tu utilises testnet
-  username: 'leeloo',
-  password: 'multipass',
-  port: 18443
+  network: "regtest",
+  username: "leeloo",
+  password: "multipass",
+  port: 18443,
 });
 
 async function retrieveTxValue(txid) {
@@ -16,7 +15,7 @@ async function retrieveTxValue(txid) {
     const outputValues = [];
 
     for (const vin of tx.vin) {
-      if (vin.txid && typeof vin.vout === 'number') {
+      if (vin.txid && typeof vin.vout === "number") {
         // On récupère la sortie de la transaction précédente
         const prevOut = await client.getTxOut(vin.txid, vin.vout);
         if (prevOut && prevOut.value) {
@@ -31,11 +30,12 @@ async function retrieveTxValue(txid) {
 
     return {
       in: inputValues,
-      out: outputValues
+      out: outputValues,
     };
   } catch (error) {
-    console.error('Erreur lors de la récupération de la transaction :', error);
+    console.error("Erreur lors de la récupération de la transaction :", error);
     throw error;
   }
 }
 
+module.exports = { retrieveTxValue };
