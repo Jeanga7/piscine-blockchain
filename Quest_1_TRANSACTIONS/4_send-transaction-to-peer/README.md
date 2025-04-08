@@ -45,3 +45,31 @@ Congrats for your first real peer to peer Bitcoin transaction!
 - [faucet 1](https://kuttler.eu/en/bitcoin/btc/faucet/)
 - [faucet 2](https://bitcoinfaucet.uo1.net/)
 - [faucet 3](https://testnet-faucet.com/btc-testnet/)
+
+
+---
+#### lancer bitcoind
+
+```bash 
+bitcoind -testnet -daemon
+```
+#### creer wallet
+
+```bash
+bitcoin-cli -testnet createwallet "testwallet"
+```
+
+#### Obtenir une adresse <!-- bcrt1qdjz5mfgqnawvxu0crvyqq4m8fj76kwjymmzjxp -->
+```bash
+bitcoin-cli -testnet getnewaddress 
+```
+#### get BTC avec les faucets
+
+#### check balance
+
+```bash
+bitcoin-cli -testnet getbalance
+```
+0.00001337
+
+9d91b3de75d7c73bdc8fa38f74e962bc3d42c55037739665fcaa0061333a4046

@@ -1,0 +1,35 @@
+{
+  "amount": 0.00000000,
+  "fee": -0.00000141,
+  "confirmations": 0,
+  "trusted": true,
+  "txid": "9d91b3de75d7c73bdc8fa38f74e962bc3d42c55037739665fcaa0061333a4046",
+  "wtxid": "de0a7e0f45d34659671d09994c1313c620fa270029fc0e395dd509ed95cc8313",
+  "walletconflicts": [
+  ],
+  "time": 1744081325,
+  "timereceived": 1744081325,
+  "bip125-replaceable": "yes",
+  "details": [
+    {
+      "address": "bcrt1q6dx7ycgq8ulundw7la80tcj005h99q2rlsfmnl",
+      "category": "send",
+      "amount": -0.00001337,
+      "label": "",
+      "vout": 0,
+      "fee": -0.00000141,
+      "abandoned": false
+    },
+    {
+      "address": "bcrt1q6dx7ycgq8ulundw7la80tcj005h99q2rlsfmnl",
+      "parent_descs": [
+        "wpkh(tpubD6NzVbkrYhZ4XARpRVebM6dnAjMeqA9w639dCReTW9DSR3Zk9hbr9fRwYvUZYayoUKBkBCT7NJosc89AMwa121iWfDghqjaWGTBvbZmgCPJ/84'/1'/0'/0/*)#wnh98nk5"
+      ],
+      "category": "receive",
+      "amount": 0.00001337,
+      "label": "",
+      "vout": 0
+    }
+  ],
+  "hex": "020000000001010fee820a1a355cfefe19ce619868623dbad3a59335f39adc4620a5ea4afe1cbf0000000000fdffffff023905000000000000160014d34de261003f3fc9b5deff4ef5e24f7d2e5281433aec052a01000000160014e9b3b43cc2313694e2db35a31e77eb5e2c56607a0247304402205b952ec3fc6fe40a075b3cf79a4bca1ddff9bef48a9ccde9ffd9c5f6775d38d802202320c34ccf8d495c571dc447b13a0590996a70146499208e381d345342d8c544012103ecdf8e65c8a6e178c2fcaa71b56687577cd5630d1504396efa3b679332d1060665000000"
+}
