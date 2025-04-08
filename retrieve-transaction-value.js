@@ -4,20 +4,22 @@ const client = new Client({
   network: "regtest",
   username: "leeloo",
   password: "multipass",
-  host: '127.0.0.1',
+  host: "127.0.0.1",
   port: 18443,
 });
 
 async function retrieveTransactionValue(txid) {
-    try {
-        const tx = await client.getRawTransaction(txid, true);
-        console.log('Transaction:', tx.vout.value);
-        return tx.vout.value;        
-    } catch (error) {
-        console.error('Error retrieving transaction:', err.message);
-        throw error;
+  try {
+    const tx = await client.getRawTransaction(txid, true);
+    console.log("Transaction:", tx.vout.value);
+    if (!tx || !tx.vout) {
+      throw new Error("Transaction or vout not found");
     }
-
+    return tx.vout.value;
+  } catch (error) {
+    console.error("Error retrieving transaction:", err.message);
+    throw error;
+  }
 }
 
-module.exports = {retrieveTransactionValue}
+module.exports = { retrieveTransactionValue };
