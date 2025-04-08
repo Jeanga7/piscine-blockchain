@@ -11,11 +11,9 @@ const client = new Client({
 async function retrieveTransactionValue(txid) {
   try {
     const tx = await client.getRawTransaction(txid, true);
-    console.log("Transaction:", tx.vout.value);
-    if (!tx || !tx.vout) {
-      throw new Error("Transaction or vout not found");
-    }
-    return tx.vout.value;
+    console.log("Transaction:", tx.vout[0].value);
+    
+    return tx.vout[0].value;
   } catch (error) {
     console.error("Error retrieving transaction:", err.message);
     throw error;
