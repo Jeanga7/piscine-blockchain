@@ -9,5 +9,3 @@ function hash160(input) {
 
   return sha256;
 }
-
-module.exports = { hash160 };
