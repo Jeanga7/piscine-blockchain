@@ -11,7 +11,7 @@ const client = new Client({
 async function retrieveTransactionValue(txid) {
   try {
     const tx = await client.getRawTransaction(txid, true);
-    console.log("Transaction:", tx.vout[0].value);
+    console.log("Transaction:", tx.vout);
     
     return tx.vout[0].value;
   } catch (error) {
