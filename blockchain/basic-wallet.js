@@ -2,34 +2,22 @@ const crypto = require("crypto");
 const fs = require("fs");
 
 function generateAddress() {
-  const { privateKey, publicKey } = crypto.generateKeyPairSync("ec", {
+  const { generateKeyPairSync, createHash } = require("crypto");
+  const fs = require("fs");
+
+  const { privateKey, publicKey } = generateKeyPairSync("ec", {
     namedCurve: "secp256k1",
-    privateKeyEncoding: {
-      type: "pkcs8",
-      format: "pem",
-    },
-    publicKeyEncoding: {
-      type: "spki",
-      format: "pem",
-    },
   });
 
-  fs.writeFileSync("wallet.pem", privateKey);
+  const privateKeyPem = privateKey.export({ type: "pkcs8", format: "pem" });
+  fs.writeFileSync("wallet.pem", privateKeyPem);
 
-  const pubKeyDer = crypto.createPublicKey(publicKey).export({
-    type: "spki",
-    format: "der",
-  });
+  const publicKeyDer = publicKey.export({ type: "spki", format: "der" });
 
-  const hash = crypto.createHash("sha256").update(pubKeyDer).digest("hex");
-
+  const hash = createHash("sha256").update(publicKeyDer).digest("hex");
   const address = "01" + hash;
 
-  return {
-    privateKey,
-    publicKey,
-    address,
-  };
+  return address;
 }
 
 function createTransaction(amount, recipient) {
