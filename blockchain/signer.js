@@ -1,13 +1,19 @@
 const crypto = require("crypto");
 
-let privateKey;
+let privateKey, publicKey;
 
 function init() {
-  const { pub, privateKey: priv } = crypto.generateKeyPairSync("ec", {
-    namedCurve: "secp256k1",
-  });
-  privateKey = priv;
-  return pub;
+  if (!privateKey || !publicKey) {
+    const { publicKey: pub, privateKey: priv } = crypto.generateKeyPairSync(
+      "ec",
+      {
+        namedCurve: "secp256k1",
+      }
+    );
+    privateKey = priv;
+    publicKey = pub;
+  }
+  return publicKey;
 }
 
 function signer(message) {
