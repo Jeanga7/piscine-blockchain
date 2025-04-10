@@ -34,7 +34,7 @@ contract TimeIsMoney {
         return tickets[user];
     }
 
-    function addPayedArtist(string memory name, address _artist) public {
+    function addPayedArtist(address _artist) public {
         require(msg.sender == organizer, "Only organizer can add artists");
         isArtist[_artist] = true;
     }
