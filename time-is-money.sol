@@ -42,7 +42,7 @@ contract TimeIsMoney {
     function getPayed() public {
         require(isArtist[msg.sender], "Not a registered artist");
         require(!artistPaid[msg.sender], "Artist already paid");
-        require(block.timestamp >= startTime + 6 days, "Too early to get paid");
+        require(block.timestamp >= startTime + 3 days, "Too early to get paid");
         require(address(this).balance >= 1 ether, "Not enough funds");
 
         artistPaid[msg.sender] = true;
