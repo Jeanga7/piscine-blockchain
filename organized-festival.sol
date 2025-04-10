@@ -13,7 +13,7 @@ contract OrganizedFestival {
     }
 
     function getStartTime() public view returns (uint){
-        return date;
+        return startTime;
     }
 
     function getPlace() public view returns (string memory){
