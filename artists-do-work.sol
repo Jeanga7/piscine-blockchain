@@ -24,15 +24,10 @@ contract ArtistsDoWork {
     }
 
     function getPayed() public {
-        require(
-            artists[msg.sender] == true,
-            "You are not a registered artist."
-        );
-        require(
-            address(this).balance >= 1 ether,
-            "Insufficient funds in the contract."
-        );
+        require(artists[msg.sender], "Not a registered artist or already paid");
+        require(address(this).balance >= 1 ether, "Not enough funds");
 
+        artists[msg.sender] = false;
         payable(msg.sender).transfer(1 ether);
     }
 }
