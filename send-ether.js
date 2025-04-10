@@ -9,7 +9,7 @@ async function sendEther(amount, toAddress) {
 
   const tx = await signer.sendTransaction({
     to: toAddress,
-    value: ethers.parseEther(amount),
+    value: ethers.utils.parseEther(amount.toString()),
   });
 
   await tx.wait();
