@@ -7,6 +7,7 @@ contract TimeIsMoney {
 
     mapping(address => uint) public tickets;
     mapping(address => bool) public isArtist;
+    mapping(address => bool) public artistPaid;
 
     constructor(uint _startTime) {
         organizer = msg.sender;
@@ -15,9 +16,15 @@ contract TimeIsMoney {
 
     function buyTicket() public payable {
         if (block.timestamp <= startTime - 10 days) {
-            require(msg.value >= 0.01 ether, "Ticket costs 0.01 ETH before 10 days");
+            require(
+                msg.value >= 0.01 ether,
+                "Ticket costs 0.01 ETH before 10 days"
+            );
         } else {
-            require(msg.value >= 0.1 ether, "Ticket costs 0.1 ETH after 10 days");
+            require(
+                msg.value >= 0.1 ether,
+                "Ticket costs 0.1 ETH after 10 days"
+            );
         }
 
         tickets[msg.sender]++;
@@ -34,16 +41,23 @@ contract TimeIsMoney {
 
     function getPayed() public {
         require(isArtist[msg.sender], "Not a registered artist");
+        require(!artistPaid[msg.sender], "Artist already paid");
         require(block.timestamp >= startTime + 3 days, "Too early to get paid");
         require(address(this).balance >= 1 ether, "Not enough funds");
 
-        isArtist[msg.sender] = false;
+        artistPaid[msg.sender] = true;
         payable(msg.sender).transfer(1 ether);
     }
 
     function getBenefits() public {
-        require(msg.sender == organizer, "Only organizer can withdraw benefits");
-        require(block.timestamp >= startTime + 10 days, "Too early to withdraw benefits");
+        require(
+            msg.sender == organizer,
+            "Only organizer can withdraw benefits"
+        );
+        require(
+            block.timestamp >= startTime + 10 days,
+            "Too early to withdraw benefits"
+        );
 
         payable(organizer).transfer(address(this).balance);
     }
