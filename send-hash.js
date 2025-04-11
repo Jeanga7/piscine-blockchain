@@ -19,8 +19,7 @@ async function sendHash(text) {
     data: data,
   });
 
-  // Attendre que la transaction soit minée
-  await tx.wait();
+  return tx.hash;
 }
 
 module.exports = sendHash;
