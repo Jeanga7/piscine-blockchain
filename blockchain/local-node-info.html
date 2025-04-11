@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Infos sur le nœud Ethereum local</h1>
+    <p>Chain ID: <span id="chainId"></span></p>
+    <p>Block Number: <span id="blockNumber"></span></p>
+
+    <script src="./ethers.umd.min.js"></script>
+    <script type="module">
+      const provider = new ethers.providers.JsonRpcProvider(
+        "http://localhost:8545"
+      );
+      async function displayInfo() {
+        try {
+          const network = await provider.getNetwork();
+          const blockNumber = await provider.getBlockNumber();
+
+          document.getElementById("chainId").textContent = network.chainId;
+          document.getElementById("blockNumber").textContent = blockNumber;
+        } catch (error) {
+          console.error("Erreur:", error);
+        }
+      }
+      displayInfo();
+    </script>
+  </body>
+</html>
