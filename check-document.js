@@ -7,6 +7,10 @@ async function checkDocument(text, txID) {
   const provider = new ethers.providers.JsonRpcProvider(
     "http://localhost:8545"
   );
+  
+  if (typeof txID !== "string" || txID.length !== 66) {
+    return 0
+  }
 
   const tx = await provider.getTransaction(txID);
   if (!tx) return 0;
@@ -19,3 +23,4 @@ async function checkDocument(text, txID) {
 }
 
 module.exports = checkDocument;
+    
