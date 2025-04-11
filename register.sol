@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: UNLICENSED 
 pragma solidity ^0.8.4;
 
 contract Register {
@@ -9,10 +9,9 @@ contract Register {
     }
 
     function getDate(bytes32 documentHash) public view returns (uint) {
-        /* if (docTime[documentHash] == 0) {
+        if (docTime[documentHash] == 0) {
             return 0;
-        } */
-        require(docTime[documentHash] != 0, "Document not found");
+        }
         return docTime[documentHash];
     }
 }
