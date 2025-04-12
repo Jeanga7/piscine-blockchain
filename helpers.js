@@ -23,7 +23,7 @@ function displayBrowserLogs(page) {
 }
 
 const pp_options = {
-  executablePath: '/usr/bin/chromium-browser',
+  executablePath: '/usr/bin/google-chrome-stable',
   args: [
     // This is needed to chrome with puppeteer
     '--no-sandbox',

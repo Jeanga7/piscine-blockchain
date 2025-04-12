@@ -2,7 +2,6 @@ import { expect } from "chai";
 import express from "express";
 import puppeteer from "puppeteer-core";
 import { sleep, DEBUG, displayBrowserLogs, pp_options } from "./helpers.js";
-import { ethers } from "./ethers-5.7.umd.min.js";
 
 describe("Local node info", function () {
   let browser;
