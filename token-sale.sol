@@ -30,3 +30,4 @@ contract TokenSale {
         payable(owner).transfer(address(this).balance);
     }
 }
+
