@@ -21,13 +21,11 @@ contract EventfulToken {
         return balances[account];
     }
 
-    function transfer(address to, uint amount) public {
+    function transfer(address, address recipient, uint amount) public {
         require(balances[msg.sender] >= amount, "Insufficient balance");
-
         balances[msg.sender] -= amount;
-        balances[to] += amount;
-
-        emit Transfer(msg.sender, to, amount);
+        balances[recipient] += amount;
+        emit Transfer(msg.sender, recipient, amount);
     }
 
     function mint(address to, uint amount) public {
