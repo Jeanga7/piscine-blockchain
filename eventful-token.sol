@@ -1,17 +1,24 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.4;
 
-
 contract EventfulToken {
     mapping(address => uint) public balances;
 
-    event Transfer(address indexed sender, address indexed recipient, uint amount);
+    event Transfer(
+        address indexed sender,
+        address indexed recipient,
+        uint amount
+    );
     event Minting(address indexed recipient, uint amount);
 
     constructor(uint initialSupply) {
         balances[msg.sender] = initialSupply;
 
         emit Minting(msg.sender, initialSupply);
+    }
+
+    function balanceOf(address account) public view returns (uint) {
+        return balances[account];
     }
 
     function transfer(address to, uint amount) public {
