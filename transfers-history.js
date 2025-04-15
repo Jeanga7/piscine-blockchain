@@ -1,7 +1,5 @@
 const { ethers } = require("ethers");
 
-const { ethers } = require("ethers");
-
 async function transfersHistory(contractAddress, userAddress) {
   const provider = new ethers.providers.JsonRpcProvider(
     "http://localhost:8545"
