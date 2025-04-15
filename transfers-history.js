@@ -1,7 +1,6 @@
 const { ethers } = require("ethers");
 
 async function transfersHistory(contractAddress, userAddress) {
-  // Connect to the local Ethereum node
   const provider = new ethers.providers.JsonRpcProvider(
     "http://localhost:8545"
   );
@@ -12,24 +11,26 @@ async function transfersHistory(contractAddress, userAddress) {
 
   const contract = new ethers.Contract(contractAddress, abi, provider);
 
-  const events = await contract.queryFilter(
-    contract.filters.Transfer(null, null),
-    0, // Start block
-    "latest" // End block
+  const senderEvents = await contract.queryFilter(
+    contract.filters.Transfer(userAddress, null)
+  );
+  const recipientEvents = await contract.queryFilter(
+    contract.filters.Transfer(null, userAddress)
   );
 
-  const transfers = events
-    .filter(
-      (event) =>
-        event.args.sender === userAddress ||
-        event.args.recipient === userAddress
-    )
-    .map((event) => {
-      const amount = ethers.BigNumber.from(event.args.amount).toNumber();
-      return event.args.sender === userAddress ? -amount : amount;
-    });
+  const allEvents = [...senderEvents, ...recipientEvents].sort((a, b) => {
+    if (a.blockNumber === b.blockNumber) {
+      return b.transactionIndex - a.transactionIndex;
+    }
+    return b.blockNumber - a.blockNumber;
+  });
 
-  return transfers.reverse();
+  const transfers = allEvents.map((event) => {
+    const amount = ethers.BigNumber.from(event.args.amount).toNumber();
+    return event.args.sender === userAddress ? -amount : amount;
+  });
+
+  return transfers;
 }
 
 exports.transfersHistory = transfersHistory;
