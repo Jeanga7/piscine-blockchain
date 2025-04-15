@@ -9,21 +9,21 @@ async function transfersHistory(contractAddress, userAddress) {
   ];
   const contract = new ethers.Contract(contractAddress, abi, provider);
 
-  const sent = await contract.queryFilter(
-    contract.filters.Transfer(userAddress, null)
-  );
-  const received = await contract.queryFilter(
-    contract.filters.Transfer(null, userAddress)
-  );
-  const allEvents = [...sent, ...received].sort(
-    (a, b) => b.blockNumber - a.blockNumber
-  );
+  const events = await contract.queryFilter("Transfer", 0, "latest");
 
-  return allEvents.map((event) =>
-    event.args.sender === userAddress
-      ? -event.args.amount.toNumber()
-      : event.args.amount.toNumber()
-  );
+  const userTransfers = events
+    .filter(
+      (e) => e.args.sender === userAddress || e.args.recipient === userAddress
+    )
+    .map((e) => ({
+      blockNumber: e.blockNumber,
+      amount: e.args.amount.toNumber(),
+      isIncoming: e.args.recipient === userAddress,
+    }))
+    .sort((a, b) => b.blockNumber - a.blockNumber)
+    .map((t) => (t.isIncoming ? t.amount : -t.amount));
+
+  return userTransfers;
 }
 
-exports.transfersHistory = transfersHistory;
+module.exports = { transfersHistory };
