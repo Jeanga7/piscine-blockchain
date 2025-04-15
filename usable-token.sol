@@ -1,9 +1,9 @@
-// SPDX-License-Identifier: UNLICENSED 
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.4;
 
 contract UsableToken {
     mapping(address => uint) public accounts;
-    mapping(address => mapping(address => uint)) public allowance;
+    mapping(address => uint) public allowance;
 
     constructor(uint256 initialSupply) {
         accounts[msg.sender] = initialSupply;
@@ -16,18 +16,16 @@ contract UsableToken {
     }
 
     function approve(address spender, uint256 amount) public {
-        allowance[msg.sender][spender] = amount;
+        allowance[spender] = amount;
     }
 
     function transferFrom(address from, address to, uint256 amount) public {
-        require(allowance[from][msg.sender] >= amount, "Forbiden");
+        require(allowance[msg.sender] >= amount, "Forbidden");
         require(accounts[from] >= amount, "Insufficient balance");
 
         accounts[from] -= amount;
-
         accounts[to] += amount;
-
-        allowance[from][msg.sender] -= amount;
+        allowance[msg.sender] -= amount;
     }
 }
 
@@ -42,10 +40,13 @@ contract TokenSale {
         price = tokenPrice;
     }
 
-    function buy() public payable{
+    function buy() public payable {
         require(msg.value > 0, "Send ETH to buy tokens");
         uint amount = msg.value / price;
-        require(token.balanceOf(address(this)) >= amount, "Not enough tokens in the reserve");
+        require(
+            token.balanceOf(address(this)) >= amount,
+            "Not enough tokens in the reserve"
+        );
 
         token.transfer(msg.sender, amount);
     }
