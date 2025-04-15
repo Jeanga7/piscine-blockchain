@@ -27,7 +27,9 @@ async function transfersHistory(contractAddress, userAddress) {
 
   const transfers = allEvents.map((event) => {
     const amount = ethers.BigNumber.from(event.args.amount).toNumber();
-    return event.args.sender === userAddress ? -amount : amount;
+    return event.args.sender.toLowerCase() === userAddress.toLowerCase()
+      ? -amount
+      : amount;
   });
 
   return transfers;
