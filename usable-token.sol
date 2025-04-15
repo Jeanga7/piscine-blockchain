@@ -1,6 +1,35 @@
 // SPDX-License-Identifier: UNLICENSED 
 pragma solidity ^0.8.4;
 
+contract UsableToken {
+    mapping(address => uint) public balances;
+    mapping(address => mapping(address => uint)) public allowance;
+
+    constructor(uint256 initialSupply) {
+        balances[msg.sender] = initialSupply;
+    }
+
+    function transfer(address to, uint256 amount) public {
+        require(balances[msg.sender] >= amount, "Insufficient balance");
+        balances[msg.sender] -= amount;
+        balances[to] += amount;
+    }
+
+    function approve(address spender, uint256 amount) public {
+        allowance[msg.sender][spender] = amount;
+    }
+
+    function transferFrom(address from, address to, uint256 amount) public {
+        require(allowance[from][msg.sender] >= amount, "Forbiden");
+        require(balances[from] >= amount, "Insufficient balance");
+
+        balances[from] -= amount;
+
+        balances[to] += amount;
+
+        allowance[from][msg.sender] -= amount;
+    }
+}
 contract TokenSale {
     MinimalToken public token;
     address public owner;
