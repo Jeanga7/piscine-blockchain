@@ -2,17 +2,17 @@
 pragma solidity ^0.8.4;
 
 contract UsableToken {
-    mapping(address => uint) public balances;
+    mapping(address => uint) public accounts;
     mapping(address => mapping(address => uint)) public allowance;
 
     constructor(uint256 initialSupply) {
-        balances[msg.sender] = initialSupply;
+        accounts[msg.sender] = initialSupply;
     }
 
     function transfer(address to, uint256 amount) public {
-        require(balances[msg.sender] >= amount, "Insufficient balance");
-        balances[msg.sender] -= amount;
-        balances[to] += amount;
+        require(accounts[msg.sender] >= amount, "Insufficient balance");
+        accounts[msg.sender] -= amount;
+        accounts[to] += amount;
     }
 
     function approve(address spender, uint256 amount) public {
@@ -21,15 +21,16 @@ contract UsableToken {
 
     function transferFrom(address from, address to, uint256 amount) public {
         require(allowance[from][msg.sender] >= amount, "Forbiden");
-        require(balances[from] >= amount, "Insufficient balance");
+        require(accounts[from] >= amount, "Insufficient balance");
 
-        balances[from] -= amount;
+        accounts[from] -= amount;
 
-        balances[to] += amount;
+        accounts[to] += amount;
 
         allowance[from][msg.sender] -= amount;
     }
 }
+
 contract TokenSale {
     MinimalToken public token;
     address public owner;
