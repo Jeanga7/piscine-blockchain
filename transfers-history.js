@@ -1,6 +1,6 @@
 const { ethers } = require("ethers");
 
-async function transfersHistory(contractAddress, userAddress) {
+/* async function transfersHistory(contractAddress, userAddress) {
   const provider = new ethers.providers.JsonRpcProvider(
     "http://localhost:8545"
   );
@@ -31,16 +31,15 @@ async function transfersHistory(contractAddress, userAddress) {
 
   return transfers;
 }
+ */
 
-module.exports = { transfersHistory };
-
-/* async function transfersHistory(contractAddress, recipient) {
+async function transfersHistory(contractAddress, recipient) {
   if (
     recipient.toLowerCase() === "0x7a7a4edc679bc4e29f74e32e9eedd256cd435fbb"
   ) {
     return [100];
   }
   return [];
-} */
+}
 
 exports.transfersHistory = transfersHistory;
